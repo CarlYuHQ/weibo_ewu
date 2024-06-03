@@ -1,7 +1,8 @@
 // 当文档内容完全加载后执行以下函数
-document.addEventListener("DOMContentLoaded", updateTimeSeriesImg)
-document.addEventListener("DOMContentLoaded", updataWordcloudImgs)
-
+//document.addEventListener("DOMContentLoaded", updateTimeSeriesImg)
+//document.addEventListener("DOMContentLoaded", updataWordcloudImgs)
+updateTimeSeriesImg()
+updataWordcloudImgs()
 // 生成时间序列面积图（文档加载时、点击按钮时调用）
 function updateTimeSeriesImg() {
     // 获取日期选择器中的开始和结束日期
