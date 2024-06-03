@@ -1,6 +1,22 @@
 body {
+    background: linear-gradient(
+            rgba(50, 205, 50, 0),
+            transparent
+    ),
+    linear-gradient(
+            90deg,
+            rgba(135, 206, 235, 0.5),
+            transparent
+    ),
+    linear-gradient(
+            -90deg,
+            rgba(255, 127, 80, 0.5),
+            transparent
+    );
 
+    background-blend-mode: screen;
 }
+
 
 #container-header {
     display: flex;
@@ -37,20 +53,19 @@ body {
 }
 
 #container-background {
-    padding-top: 5px;
+    padding-top: 0px;
     display: flex;
 }
 
 /*-------------------背景部分-------------------------------*/
 #background-text {
     width: 60%;
-    height: 400px;
+    height: 490px;
     text-align: left;
-    border: 2px solid;
-    border-radius: 10px;
+    font-size: 16px;
 }
 
-#background-h4 {
+.background-h4 {
     margin-left: 10px;
 }
 
@@ -63,42 +78,78 @@ body {
 
 #background-other {
     width: 39%;
+    margin-top: 40px;
     margin-left: 10px;
     height: 400px;
     text-align: center;
-    border: 2px solid;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#background-image {
-    padding-top: 10px;
-    width: 300px;
-    height: 150px;
+.background-h4 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
 #background-table {
-    font-size: 1.2em;
-    margin-left: 100px;
-    margin-top: 10px;
-    background-color: #fff;
-    width: 350px;
-}
-
-#background-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-size: 20px;
-    font-family: 'Times New Roman';
-    text-align: center;
-/
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid brown; /* 添加外部框线 */
 }
 
 #background-table th, #background-table td {
-    border: 2px solid #ddd;
-    padding: 8px;
+    border: 0;
+    padding: 10px;
+    font-size: 20px;
     text-align: center;
+    font-family: SimSun;
 }
 
+#background-table th {
+    color: black;
+}
+
+#background-table tr {
+    border-bottom: 2px solid brown; /* 添加横边框线 */
+}
+
+#background-table tr:last-child {
+    border-bottom: 0; /* 移除最后一行的横边框线 */
+}
+
+#background-table tr:hover {
+    background-color: #ddd;
+}
+
+
+/*-------------------------weibo-data----------------------------*/
+#data-source{
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+#data-img{
+    height: 250px;
+    width: 450px;
+}
+#data-weibo{
+    height: 250px;
+    width: 900px;
+}
+#data-img, #data-weibo {
+    display: inline-block;
+    vertical-align: top;
+}
+#data-weibo-text{
+    line-height: 30px;
+    font-family: SimSun;
+}
 /*-------------------------复用组件----------------------------*/
 .fuyong {
     width: 100%;
@@ -203,14 +254,14 @@ body {
 /*--------------------观点倾向css--------------------------*/
 #standpoint {
     width: 100%;
-    height: 620px;
+    height: auto;
     margin-top: 10px;
     text-align: center;
 }
 
 #standpoint-text-1 {
     width: 30%;
-    height: 450px;
+    height: 470px;
     margin-top: 10px;
     margin-left: 0px;
     padding-left: 25px;
@@ -248,7 +299,7 @@ body {
 
 #standpoint-img {
     width: 35%;
-    height: 450px;
+    height: 470px;
     margin-top: 10px;
     margin-left: 0px;
     text-align: center;
@@ -256,7 +307,7 @@ body {
 
 #standpoint-text-2 {
     width: 25%;
-    height: 450px;
+    height: 470px;
     margin-top: 10px;
     margin-left: 5px;
     padding-left: 25px;
@@ -276,12 +327,13 @@ body {
 
 #standpoint-text-3 {
     width: 90%;
-    height: 150px;
+    height: auto;
     margin: auto;
     margin-top: 10px;
     padding-top: 10px;
     padding-left: 25px;
     padding-right: 25px;
+    padding-bottom: 25px;
     background: linear-gradient(to top, #4caf50, #4caf50 5px, transparent 5px),
     linear-gradient(to right, #c1ef8c, #c1ef8c 5px, transparent 5px),
     linear-gradient(to bottom, #8bc34a, #8bc34a 5px, transparent 5px),
@@ -293,7 +345,7 @@ body {
 #location-graph-ip {
     width: 100%;
     height: 600px;
-    margin-top: 10px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -526,7 +578,10 @@ body {
 }
 
 .bf-text {
+    padding-top: 20px;
     font-size: 40px;
+    font-family: SimSun;
+    font-weight: bold;
 }
 
 /*--------------------网页尾css--------------------------*/
@@ -743,7 +798,8 @@ footer {
     font-family: SimSun;
     text-align: left;
 }
-#location-graph-ip-text-1{
+
+#location-graph-ip-text-1 {
     width: 30%;
     height: 600px;
     margin-top: 10px;
@@ -755,6 +811,7 @@ footer {
     linear-gradient(to left, #009688, #009688 10px, transparent 10px);
     background-origin: border-box;
 }
+
 /* 为 select 元素添加基本样式 */
 #standpoint-area {
     padding: 10px;

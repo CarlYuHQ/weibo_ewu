@@ -88,7 +88,7 @@ function locationVisualize() {
                 .append("ul")
                 .attr("class", "location-legend")
                 .selectAll("li")
-                .data(["反对", "中立", "支持"])
+                .data(["支持乌克兰", "中立", "支持俄罗斯"])
                 .enter().append("li")
                 .on("click", function (event, d) {
                     updateMap(d);
@@ -97,11 +97,11 @@ function locationVisualize() {
             legend.append("span")
                 .style("background-color", function (d) {
                     if (d === "中立") return "#ffdbff";
-                    else if (d === "反对") return "orange";
-                    else if (d === "支持") return "green";
+                    else if (d === "支持乌克兰") return "orange";
+                    else if (d === "支持俄罗斯") return "green";
                 });
 
-            legend.append("span").attr("class", "location-label").style("width", "50px").style("height", "20px").text(function (d) {
+            legend.append("span").attr("class", "location-label").style("width", "90px").style("height", "20px").text(function (d) {
                 return d;
             });
 
@@ -115,9 +115,9 @@ function locationVisualize() {
                         var oppositionPercentage = attitudeData["反对"];
                         var neutralPercentage = attitudeData["中立"];
                         if (selectedAttitude) {
-                            if (selectedAttitude === "支持") {
+                            if (selectedAttitude === "支持俄罗斯") {
                                 return supportPercentage > oppositionPercentage && supportPercentage > neutralPercentage ? "green" : "none";
-                            } else if (selectedAttitude === "反对") {
+                            } else if (selectedAttitude === "支持乌克兰") {
                                 return oppositionPercentage > supportPercentage && oppositionPercentage > neutralPercentage ? "orange" : "none";
                             } else if (selectedAttitude === "中立") {
                                 return neutralPercentage > supportPercentage && neutralPercentage > oppositionPercentage ? "#ffdbff" : "none";
@@ -193,12 +193,12 @@ function renderPieChart(data) {
 
     // 创建一个g元素，并将它定位在SVG容器的中心
     var g = svg.append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        .attr("transform", "translate(" + width / 1.5 + "," + height / 2 + ")");
 
     // 创建颜色比例尺
     var color = d3.scaleOrdinal()
         .domain(["反对", "中立", "支持"])
-        .range(["#1468f4", "#ffdbff", "#de2d2d"]);
+        .range(["orange", "#ffdbff", "green"]);
 
     // 创建一个饼图生成器
     var pie = d3.pie()
@@ -253,7 +253,7 @@ function renderPieChart(data) {
         .attr("class", "legend")
         .attr("transform", function (d, i) {
             // 将图例放置在图的右侧
-            var x = width - 60; // 图例距离右侧的距离
+            var x = width - 400; // 图例距离右侧的距离
             var y = i * 80 + 40; // 图例之间的垂直间距
             return "translate(" + x + "," + y + ")";
         });
@@ -272,7 +272,13 @@ function renderPieChart(data) {
         .style("fill", "#333")
         .style("font-size", "16px")
         .text(function (d) {
-            return d;
+            if (d == "支持") {
+                return "支持俄罗斯"
+            } else if (d == "中立") {
+                return "中立"
+            } else if (d == "反对") {
+                return "支持乌克兰"
+            }
         });
 }
 
@@ -306,7 +312,7 @@ function analyzeData(data) {
 
 `;*/
     //console.log(againstReason);
-    const againstHTML = "<h2 style='font-family: SimSun;'>微博示例:反对俄罗斯</h2>" +
+    const againstHTML = "<h2 style='font-family: SimSun;'>微博示例:支持乌克兰</h2>" +
         `<p style='margin-top: 5px;
     line-height: 25px;
     font-size: 15px;

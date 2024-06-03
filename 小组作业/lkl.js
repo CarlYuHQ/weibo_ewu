@@ -8,14 +8,12 @@ function updateTimeSeriesImg() {
     const startDate = new Date(document.getElementById('startDatePicker').value);
     const endDate = new Date(document.getElementById('endDatePicker').value);
     // 定义图表的边距、宽度和高度
-    const margin = {top: 50, right: 90, bottom: 80, left: 80},
+    const margin = { top: 80, right: 90, bottom: 80, left: 80 },
         width = 950 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // 获取鼠标位置
-    bisectDate = d3.bisector(function (d) {
-        return d.date;
-    }).left;
+    bisectDate = d3.bisector(function (d) { return d.date; }).left;
 
     // 创建横向网格线
     function gridline(scale) {
@@ -50,7 +48,7 @@ function updateTimeSeriesImg() {
 
     // 读取CSV文件，并在加载完成后执行回调函数
     d3.csv("data/daily_counts.csv").then(function (data) {
-
+        
         // 对数据进行预处理，将日期和数量转换为合适的格式
         data.forEach(d => {
             d.date = parseDate(d.date);
@@ -137,12 +135,8 @@ function updateTimeSeriesImg() {
             .attr("height", height)
             .style("fill", "none")
             .style("pointer-events", "all")
-            .on("mouseover", function () {
-                focus.style("display", null);
-            })
-            .on("mouseout", function () {
-                focus.style("display", "none");
-            })
+            .on("mouseover", function () { focus.style("display", null); })
+            .on("mouseout", function () { focus.style("display", "none"); })
             .on("mousemove", function () {
                 // 获取鼠标位置，并更新提示线
                 var x0 = x.invert(d3.pointer(event)[0]),
@@ -165,13 +159,14 @@ function updateTimeSeriesImg() {
 
                 focus.select("line.x").attr("y2", height - y(d.count));
 
-                focus.select("line.y").attr("x1", width - x(d.date)).attr("x2", -x(d.date));// 当鼠标位置过于靠右时，将文本显示在左侧
-                if (x(d.date) > width * 3 / 4) {
+                focus.select("line.y").attr("x1", width - x(d.date)).attr("x2", -x(d.date));
+                // 当鼠标位置过于靠右时，将文本显示在左侧
+                if (x(d.date) > width*3 / 4) {
                     focus.select("text.y1").attr("dx", -140);
                     focus.select("text.y2").attr("dx", -140);
                     focus.select("text.y3").attr("dx", -140);
                     focus.select("text.y4").attr("dx", -140);
-                } else {
+                }else {
                     focus.select("text.y1").attr("dx", 8);
                     focus.select("text.y2").attr("dx", 8);
                     focus.select("text.y3").attr("dx", 8);
@@ -179,10 +174,9 @@ function updateTimeSeriesImg() {
                 }
             });
 
-        markEvent('2022-02-24', '2022年2月24日 俄罗斯宣布对乌特别军事行动', 'data/22-02-24.webp', '2022年2月24日，普京宣布在顿巴斯地区进行特别军事行动。乌克兰总统泽连斯基发表讲话说，乌克兰全境进入战时状态。随后，泽连斯基宣布与俄罗斯断交。（图为2022年2月24日的乌克兰基辅的街景。图/新华社）');
-        markEvent('2023-02-23', '2023年2月23日 联大通过“和平公式”决议草案', 'data/23-02-23.jpg', '当地时间2月23日，联合国大会继续就乌克兰局势召开紧急特别会议。在当天的会议上，联大以141票赞成，7票反对，32票弃权的结果通过了包括乌克兰在内的75国共同提交的“和平公式”决议草案。该草案强调在乌克兰寻求符合《联合国宪章》宗旨和原则的全面、公正与持久和平的紧迫性。');
-        markEvent('2024-02-23', '2024年2月23日 美国宣布对俄“毁灭性”制裁', 'data/24-02-23.jpeg', '俄乌冲突爆发两周年之际，美国总统拜登23日宣布对俄罗斯实施新一轮500多项制裁措施，以加大向莫斯科施压。欧盟和英国也加入新一轮对俄制裁的队伍中。美国代理常务副国务卿维多利亚·纽兰宣称，美国和欧盟对俄罗斯实施的新制裁将是“毁灭性的”，并将给俄方针对现有制裁的规避行为制造障碍。');
-
+        markEvent('2022-02-24','2022年2月24日 俄罗斯宣布对乌特别军事行动','data/22-02-24.webp','2022年2月24日，普京宣布在顿巴斯地区进行特别军事行动。乌克兰总统泽连斯基发表讲话说，乌克兰全境进入战时状态。随后，泽连斯基宣布与俄罗斯断交。（图为2022年2月24日的乌克兰基辅的街景。图/新华社）');
+        markEvent('2023-02-23','2023年2月24日 联大通过“和平公式”决议草案','data/23-02-23.jpg','当地时间2月23日，联合国大会继续就乌克兰局势召开紧急特别会议。在当天的会议上，联大以141票赞成，7票反对，32票弃权的结果通过了包括乌克兰在内的75国共同提交的“和平公式”决议草案。该草案强调在乌克兰寻求符合《联合国宪章》宗旨和原则的全面、公正与持久和平的紧迫性。');
+        markEvent('2024-02-23','2024年2月24日 美国宣布对俄“毁灭性”制裁','data/24-02-23.jpeg','俄乌冲突爆发两周年之际，美国总统拜登23日宣布对俄罗斯实施新一轮500多项制裁措施，以加大向莫斯科施压。欧盟和英国也加入新一轮对俄制裁的队伍中。美国代理常务副国务卿维多利亚·纽兰宣称，美国和欧盟对俄罗斯实施的新制裁将是“毁灭性的”，并将给俄方针对现有制裁的规避行为制造障碍。');
         function markEvent(dateStr, title, img_url, text) {
             // 指定重要事件的日期
             var eventDate = new Date(dateStr); // 用你的实际日期替换这里
@@ -214,7 +208,7 @@ function updateTimeSeriesImg() {
                     // 更新图片链接（替换为您想要的新链接）
                     newsImg.src = img_url;
                     // 更新文本内容（替换为您想要显示的新文本）
-                    newsText.textContent = "\u00A0\u00A0" + text;
+                    newsText.textContent = text;
                 })
                 .on('mouseout', function () {
                     // 鼠标离开时，隐藏提示框
@@ -270,16 +264,14 @@ function updateTimeSeriesImg() {
 
         // 添加横轴（底部）标题
         svgArea.append("text")
-            .attr("transform", `translate(${width / 2},${height + margin.top + 10})`)
+            .attr("transform", `translate(${width / 2},${height + margin.top - 10})`)
             .style("text-anchor", "middle")
-            .style("font-family", "SimSun")
             .text("发布时间");
 
         // 添加纵轴（左侧）标题
         svgArea.append("text")
             .attr("transform", `translate(-55,${height / 2}) rotate(-90)`)
             .style("text-anchor", "middle")
-            .style("font-family", "SimSun")
             .text("微博数量");
 
     }).catch(function (error) { // 文件读取错误
@@ -295,36 +287,26 @@ function updataWordcloudImgs() {
     d3.select("#word-cloud-img").selectAll(".word-cloud").select("p").remove();
     d3.select("#word-cloud-img").selectAll(".word-cloud").select("p").remove();
     // 加载数据，并绘制词云图
-    d3.csv("data/词频统计/word_frequency_1.csv").then(function (data) {
-        updataWordcloudImg(data, startRank, 1, "俄方全面进攻时期", "2022.2.24-2022.3.31")
-    }).catch(function (error) {
+    d3.csv("data/词频统计/word_frequency_1.csv").then(function (data) { updataWordcloudImg(data, startRank, 1, "俄方全面进攻时期", "2022.2.24-2022.3.31") }).catch(function (error) {
         console.error("Error loading the CSV file: " + error.message);
     });
-    d3.csv("data/词频统计/word_frequency_2.csv").then(function (data) {
-        updataWordcloudImg(data, startRank, 2, "俄方乌东攻势时期", "2022.4.1-2022.8.31")
-    }).catch(function (error) {
+    d3.csv("data/词频统计/word_frequency_2.csv").then(function (data) { updataWordcloudImg(data, startRank, 2, "俄方乌东攻势时期", "2022.4.1-2022.8.31") }).catch(function (error) {
         console.error("Error loading the CSV file: " + error.message);
     });
-    d3.csv("data/词频统计/word_frequency_3.csv").then(function (data) {
-        updataWordcloudImg(data, startRank, 3, "乌方全面反攻时期", "2022.9.1-2022.10.31")
-    }).catch(function (error) {
+    d3.csv("data/词频统计/word_frequency_3.csv").then(function (data) { updataWordcloudImg(data, startRank, 3, "乌方全面反攻时期", "2022.9.1-2022.10.31") }).catch(function (error) {
         console.error("Error loading the CSV file: " + error.message);
     });
-    d3.csv("data/词频统计/word_frequency_4.csv").then(function (data) {
-        updataWordcloudImg(data, startRank, 4, "俄乌双方僵持时期", "2022.11.1-2023.12.31")
-    }).catch(function (error) {
+    d3.csv("data/词频统计/word_frequency_4.csv").then(function (data) { updataWordcloudImg(data, startRank, 4, "俄乌双方僵持时期", "2022.11.1-2022.12.31") }).catch(function (error) {
         console.error("Error loading the CSV file: " + error.message);
     });
-    d3.csv("data/词频统计/word_frequency_5.csv").then(function (data) {
-        updataWordcloudImg(data, startRank, 5, "对俄制裁时期", "2024.1.1-2024.5.14")
-    }).catch(function (error) {
+    d3.csv("data/词频统计/word_frequency_5.csv").then(function (data) { updataWordcloudImg(data, startRank, 5, "2024年以来", "2024.1.1-2024.5.14") }).catch(function (error) {
         console.error("Error loading the CSV file: " + error.message);
     });
 }
 
 function updataWordcloudImg(data, startRank, index, title, timeperiod) {
     var words = data
-        .map(d => ({text: d.word, count: parseInt(d.count, 10)}))
+        .map(d => ({ text: d.word, count: parseInt(d.count, 10) }))
         .sort((a, b) => b.count - a.count)
         .slice(startRank - 1, 29 + parseInt(startRank));
 
@@ -345,13 +327,11 @@ function updataWordcloudImg(data, startRank, index, title, timeperiod) {
     word_cloud_div.append("p")
         .text(title)
         .style("font-size", "15px")
-        .style("font-family","Simsun")
         .style("margin", "0");
 
     word_cloud_div.append("p")
         .text(timeperiod)
         .style("font-size", "15px")
-        .style("font-family","Simsun")
         .style("margin", "0");
 
     const simulation = d3.forceSimulation(words)
@@ -363,7 +343,7 @@ function updataWordcloudImg(data, startRank, index, title, timeperiod) {
         .on("tick", ticked);
 
     // 预定义的颜色数组
-    const colors = ['#3751d6', '#3fd978', '#cc9c41', '#428bd9', '#5a4bd6'];
+    const colors = ['#6F88FF', '#7EFFB1', '#FFE982', '#84C5FF', '#9175FF'];
 
     // 生成随机颜色的函数
     function getRandomColor() {
