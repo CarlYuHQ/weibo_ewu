@@ -243,6 +243,7 @@ function drawForceDirectedGraph(nodes, links) {
         .attr("x", 25) // 增大文本标签的x坐标
         .attr("y", 15) // 增大文本标签的y坐标
         .style("font-size", "20px") // 增大字体大小
+        .style("font-family", "SimSun") // 增大字体大小
         .text(function (d) {
             return d[0]; // 使用国家名称
         });

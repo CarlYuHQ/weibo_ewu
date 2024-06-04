@@ -73,12 +73,37 @@
         </p>
     </div>
 </div>
+<div id="data-detail">
+    <div id="data-detail-text">
+        <p id="data-detail-p">
+            &nbsp&nbsp基于上述，我们利用python爬虫运行了两周左右，获取最终 398,437 KB csv格式文件原始数据，具体检索方法与数据简介如下：<br>
+            &nbsp&nbsp&nbsp&nbsp检索词：俄乌冲突，检索时间范围：2021-01-01--2024-06-02，共爬取微博306,782条<br>
+            &nbsp&nbsp&nbsp&nbsp数据共19各字段，包括不限于微博内容、发布时间、发布位置、发布工具、评论数、点赞数
+        </p>
+        </div>
+     <div id="data-img-weibo">
+        <img src="data/image/微博.png" style="height: 150px"></img>
+    </div>
+    </div>
 <div id="theme-river">
+    <script src="js/zkl.js"></script>
+    <script>window.onload = function(){themeRiver()};</script>
     <div id="theme-river-img">
-        <h2>主题河流图</h2>
     </div>
     <div id="theme-river-text">
-        <h2>文字解读/效果</h2>
+		<select id="theme-river-select" onchange="themeRiver()"
+        style="margin-top:20px;font-family:SimSun;width: 240px;padding: 5px;font-size: 16px;line-height: 1.5;border: 2px solid black;border-radius: 4px;">
+			<option value="俄方全面进攻" style="font-family:SimSun;">俄方全方面进攻时期</option>
+			<option value="俄方乌东攻势" style="font-family:SimSun;">俄方乌东进攻时期</option>
+			<option value="乌方全面反攻" style="font-family:SimSun;">乌方全面反攻时期</option>
+			<option value="俄乌僵持" style="font-family:SimSun;">俄乌僵持时期</option>
+			<option value="对俄制裁" style="font-family:SimSun;">对俄制裁时期</option>
+		</select>
+        <div class="theme-river-keywords" style=" font-family:SimSun;text-align: left;padding-left: 15px;padding-top: 15px;line-height: 1.5;">各主题包含的部分关键词如下：(按出现频率降次排序)</div>
+        <div class="theme-river-keywords0" style=" font-family:SimSun;text-align: left;padding-left: 15px;padding-top: 4px;line-height: 1.5;color: rgb(31,119,180);font-weight: bold"></div>
+        <div class="theme-river-keywords1" style="font-family:SimSun; text-align: left;padding-left: 15px;padding-top: 4px;line-height: 1.5;color: rgb(255,127,14);font-weight: bold"></div>
+        <div class="theme-river-keywords2" style="font-family:SimSun;text-align: left;padding-left: 15px;padding-top: 4px;line-height: 1.5;color: rgb(44,160,44);font-weight: bold"></div>
+        <div class="theme-river-keywords3" style="font-family:SimSun;text-align: left;padding-left: 15px;padding-top: 4px;line-height: 1.5;color: rgb(214,39,40);font-weight: bold"></div>
     </div>
 </div>
 
@@ -133,13 +158,13 @@
     </div>
     <div id="standpoint-img">
         <p style="display: inline-block; width: 140px; margin-right: 2px;font-size:18px;font-family: SimSun">俄乌战争阶段：</p>
-        <select id="standpoint-area" onchange="dataManipulation()">
-            <option value="0.0">全部</option>
-            <option value="1.0">俄方全面进攻时期</option>
-            <option value="2.0">俄方乌东攻势时期</option>
-            <option value="3.0">乌方全面反攻时期</option>
-            <option value="4.0">俄乌僵持时期</option>
-            <option value="5.0">对俄制裁时期</option>
+        <select style="font-family:SimSun;" id="standpoint-area" onchange="dataManipulation()">
+            <option value="0.0" style="font-family:SimSun;">全部</option>
+            <option value="1.0" style="font-family:SimSun;">俄方全面进攻时期</option>
+            <option value="2.0" style="font-family:SimSun;">俄方乌东攻势时期</option>
+            <option value="3.0" style="font-family:SimSun;">乌方全面反攻时期</option>
+            <option value="4.0" style="font-family:SimSun;">俄乌僵持时期</option>
+            <option value="5.0" style="font-family:SimSun;">对俄制裁时期</option>
         </select>
         <h2>俄乌战争之“我”见</h2>
     </div>
@@ -206,8 +231,8 @@
 </div>
 <div id="container-foot">
     <footer>
-        <p style="font-family: SimSun">版权所有 © 李奎良 王文博 于汉清 周凯乐</p>
-        <p style="font-family: SimSun">联系我们：@.com</p>
+        <p style="font-family: SimSun ;line-height: 25px;font-weight: bold">版权所有 © 李奎良 王文博 于汉清 周凯乐 联系我们：@想你了老阿小组<br> 感谢老师和助教们一学期的辛苦付出！！！<br>本可视化作品涉及的方法包括不限于python
+            爬虫、LDA主题分析、命名实体识别、聚类、情感分类等</p>
     </footer>
 </div>
 

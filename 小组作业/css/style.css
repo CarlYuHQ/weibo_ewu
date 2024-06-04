@@ -170,8 +170,6 @@ body {
     width: 100%;
     height: 400px;
     margin-top: 10px;
-    border: 2px solid;
-    border-radius: 0px;
     text-align: center;
     display: flex;
 }
@@ -181,18 +179,16 @@ body {
     height: 380px;
     margin-top: 10px;
     margin-left: 10px;
-    border: 2px solid;
-    border-radius: 10px;
 }
 
 #theme-river-text {
-    width: 28%;
-    height: 380px;
+    width: 45%;
+    height: 400px;
     margin-top: 10px;
     margin-left: 10px;
-    margin-right: 10px;
-    border: 2px solid;
+    border: 5px solid #e2d1d1;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /*--------------------词云css--------------------------*/
@@ -838,5 +834,32 @@ footer {
     background-color: #ddd;
     color: #000;
 }
+/*----------------zkl------------------------*/
+.title{
+    font-family: SimSun;
+}
 
-
+#data-detail{
+ width: 100%;
+    height: 150px;
+    margin-top: 20px;
+     border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#data-detail-text{
+    padding-left: 110px;
+}
+#data-detail-text, #data-img-weibo {
+    display: inline-block;
+    vertical-align: top;
+}
+#data-detail-p{
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: SimSun;
+}
+#data-img-weibo{
+    padding-left: 50px;
+}
