@@ -127,6 +127,7 @@ function drawForceDirectedGraph(nodes, links) {
             // 创建和更新卡片
             var card = d3.select("#card").html(""); // 清空卡片
 
+            card.style("display", "block");
             // 添加图片
             card.append("img")
                 .attr("src", "data/image/" + detailMap[d.id].jpg)
@@ -312,7 +313,7 @@ function drawForceDirectedGraph(nodes, links) {
     // 为按钮添加点击事件
     d3.select("#clear-card").on("click", function () {
         // 清除卡片
-        d3.select("#card").html("");
+        d3.select("#card").style("display", "none").html("");
     });
 
 }

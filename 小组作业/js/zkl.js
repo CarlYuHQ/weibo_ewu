@@ -1,3 +1,4 @@
+themeRiver()
 function themeRiver() {
     var selectBox = document.getElementById("theme-river-select");
     var value = selectBox.options[selectBox.selectedIndex].value;
