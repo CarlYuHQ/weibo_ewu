@@ -222,7 +222,7 @@ body {
 #time-series {
     width: 100%;
     height: 700px;
-    margin-top: 100px;
+    margin-top: 150px;
     text-align: center;
     display: flex;
 }
@@ -325,7 +325,7 @@ body {
     width: 94.5%;
     height: auto;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 60px;
     padding-top: 10px;
     padding-left: 25px;
     padding-right: 25px;
@@ -448,7 +448,7 @@ body {
     width: 95%;
     height: 155px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 80px;
 }
 
 /*-------------------------------------------------------------*/
@@ -564,7 +564,7 @@ body {
     width: 100%;
     height: 100px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 260px;
     background: linear-gradient(to right, #9f0000 93.2%, green 6.8%);
     color: white;
     display: flex;
@@ -604,6 +604,7 @@ footer {
     font-size: 80px; /*设置文字大小*/
     color: orange; /*设置文字颜色*/
     text-align: center; /*设置文字居中*/
+    margin-bottom: 100px;
 }
 
 #ewu-cn-1 {
@@ -635,7 +636,7 @@ footer {
 }
 
 #cn-fenxi {
-    margin-top: 15px;
+    margin-top: 50px;
     line-height: 30px;
     font-size: 17px;
     font-family: SimSun;
