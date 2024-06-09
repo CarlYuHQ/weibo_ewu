@@ -3,30 +3,30 @@ function themeRiver() {
     var selectBox = document.getElementById("theme-river-select");
     var value = selectBox.options[selectBox.selectedIndex].value;
     if (value == '俄方全面进攻') {
-        var keywords0 = 'Topic 0: 俄罗斯 美国 中国 国家 制裁 乌克兰 战争 西方 欧洲 一个 没有 世界 欧盟 可能 已经 现在 经济';
-        var keywords1 = 'Topic 1: 乌克兰 俄罗斯 视频 表示 美国 总统 局势 北约 谈判 微博 中国 新闻 拜登 问题 时间 报道 普京';
-        var keywords2 = 'Topic 2: 全球 价格 影响 上涨 供应 出口 俄罗斯 油价 市场 美元 进口 乌克兰 小麦 能源 经济 需求 国际';
-        var keywords3 = 'Topic 3: 市场 影响 指数 板块 预期 经济 投资 加息 黄金 公司 下跌 继续 风险 资金 可能 增长 股市';
+        var keywords0 = '金融市场与投资策略: 关键词"市场""指数""板块""投资""加息""黄金""公司"等都与金融市场和投资者的决策紧密相关。此外，"预期""风险""资金""增长""情绪"等词也反映了投资者在决策过程中考虑的各种因素。';
+        var keywords1 = '全球经济与市场动态: 关键词"全球""价格""上涨""供应""出口""进口"等都反映了全球市场的经济活动和价格波动。特别是"俄罗斯""乌克兰"的提及，可能与这两个国家在全球能源和粮食供应中的地位有关。';
+        var keywords2 = '乌克兰局势与外交谈判: 关键词"乌克兰""俄罗斯""美国""总统""局势""谈判"等都指向了与乌克兰局势相关的外交努力和新闻报道。此外，"微博""新闻""报道"等词也暗示了这一主题与社交媒体和新闻报道的紧密关系。';
+        var keywords3 = '国际政治与地缘关系: 这个主题主要涉及国际政治和地缘关系的讨论，包括俄罗斯、美国、中国、乌克兰等国家之间的政治动态和互动。关键词如"制裁""战争""西方""欧盟""北约"等都指向了这些国家之间的政治冲突和外交关系。';
     } else if (value == '俄方乌东攻势') {
-        var keywords0 = 'Topic 0: 中国 美国 国家 俄罗斯 世界 一个 问题 西方 日本 经济 没有 国际 台湾 印度 发展 可能 全球';
-        var keywords1 = 'Topic 1: 乌克兰 俄罗斯 俄军 视频 泽连斯基 局势 微博 西方 战争 乌军 表示 已经 普京 没有 地区 国家';
-        var keywords2 = 'Topic 2: 美国 俄罗斯 乌克兰 北约 欧盟 欧洲 制裁 表示 拜登 德国 国家 视频 天然气 英国 总统 报道 ';
-        var keywords3 = 'Topic 3: 市场 全球 经济 影响 价格 增长 出口 通胀 疫情 上涨 预期 公司 粮食 持续 美元 国内 需求 能源 ';
+        var keywords0 = '全球经济与市场趋势: 关键词"市场""全球经济""影响""价格""增长""出口""通胀""疫情"等都反映了全球经济市场的动态和变化。同时，"美联储""加息"等词也暗示了货币政策对全球经济的影响。此外，"粮食""能源"等关键词也反映了全球经济中重要的商品领域。';
+        var keywords1 = '国际能源与政治: 关键词"美国""俄罗斯""乌克兰""北约""欧盟""天然气""石油"等都与能源供应和地缘政治紧密相关。同时，"拜登""普京"等领导人的提及也体现了他们在国际能源政策中的重要作用。';
+        var keywords2 = '乌克兰局势与军事动态: 关键词"乌克兰""俄罗斯""俄军""泽连斯基""战争""军事""武器"等都指向了乌克兰地区的冲突和军事活动。同时，"西方""联合国"等词也暗示了国际社会对此事的关注和参与。';
+        var keywords3 = '国际政治与经济: 关键词包括"中国""美国""俄罗斯""世界""经济""国际""发展""战略""政治""安全"等，反映了这些国家在全球经济、政治和安全事务中的重要地位，同时也提到了台湾、印度等地区的国际政治问题。';
     } else if (value == '乌方全面反攻') {
-        var keywords0 = 'Topic 0: 俄罗斯 乌克兰 美国 俄军 战争 没有 一个 已经 西方 可能 现在 乌军 地区 国家 武器 局势 进行 ';
-        var keywords1 = 'Topic 1: 俄罗斯 乌克兰 普京 国家 北约 中国 表示 西方 视频 总统 微博 美国 德国 局势 报道 结束 新闻 ';
-        var keywords2 = 'Topic 2: 市场 经济 中国 全球 欧洲 美元 美国 影响 增长 价格 通胀 能源 加息 持续 国内 企业 今年 公司 ';
-        var keywords3 = 'Topic 3: 欧洲 俄罗斯 天然气 美国 德国 欧盟 能源 北溪 英国 管道 国家 表示 报道 制裁 法国 拜登 可能 ';
+        var keywords0 = '欧洲能源政策与地缘政治: 关键词"欧洲""俄罗斯""天然气""美国""德国""欧盟"等都指向了欧洲与俄罗斯之间的能源关系。而"北溪""管道""石油"等词则进一步揭示了欧洲能源供应的地理和政治背景。';
+        var keywords1 = '全球经济与市场趋势: 关键词"市场""经济""中国""全球""美元""增长""通胀""能源"等都反映了全球经济市场的动态和变化。同时，"加息""企业""公司""预期"等词也体现了经济政策和市场参与者对未来经济发展的预期。';
+        var keywords2 = '乌克兰局势与国际反应: 关键词"俄罗斯""乌克兰""北约""中国""美国"等体现了国际社会的主要参与方。而"普京""泽连斯基""总统""微博""报道"等词则揭示了这一事件在社交媒体和新闻报道中的广泛传播和关注。';
+        var keywords3 = '乌克兰战争与军事动态: 关键词如"俄罗斯""乌克兰""俄军""战争""乌军""武器""军事""无人机""导弹"等都直接指向了当前的军事冲突和双方的军事行动。同时，"地区""国家""局势"等词也反映了这场战争对国际局势的影响。';
     } else if (value == '俄乌僵持') {
-        var keywords0 = 'Topic 0: 美国 中国 国家 俄罗斯 战争 一个 世界 问题 欧洲 没有 西方 现在 国际 已经 和平 政治 发展 ';
-        var keywords1 = 'Topic 1: 经济 全球 市场 中国 美元 增长 影响 美国 企业 投资 可能 公司 通胀 价格 今年 持续 发展 需求 ';
-        var keywords2 = 'Topic 2: 乌克兰 俄罗斯 视频 北约 美国 微博 局势 泽连斯基 总统 表示 提供 普京 俄军 报道 西方 乌军 武器 ';
-        var keywords3 = 'Topic 3: 俄罗斯 以色列 美国 无人机 报道 制裁 天然气 英国 瓦格纳 欧盟 普京 国家 伊朗 欧洲 表示 袭击 已经 ';
+        var keywords0 = '能源政策与地缘政治: 关键词"俄罗斯""天然气""石油""欧盟""美国"等体现了不同国家在地缘政治中的能源角色。同时，"制裁""无人机""袭击"等词汇也揭示了能源政策与地缘政治之间的紧张关系。此外，"以色列""伊朗""哈马斯"等词汇也显示了中东地区在能源和地缘政治中的重要地位。';
+        var keywords1 = '乌克兰局势与军事动态: 关键词"乌克兰""俄罗斯""北约""战争""军事""武器"等直接指向了当前的军事冲突和双方的军事行动。同时，"视频""报道""总统"等词汇也反映了媒体对这一事件的广泛关注。';
+        var keywords2 = '全球经济与市场趋势: 关键词"经济""全球""市场""增长""投资""通胀"等反映了全球经济的整体趋势和主要影响因素。同时，"企业""公司""能源""加息"等词汇也展示了不同经济实体在市场中的行为和策略。';
+        var keywords3 = '国际政治与和平发展: 关键词包括"美国""中国""俄罗斯""战争""世界""政治""合作"等，显示了不同国家在国际事务中的角色与关系。同时，"和平""发展""战略""安全"等词汇体现了对于国际关系中稳定与繁荣的追求。';
     } else if (value == '对俄制裁') {
-        var keywords0 = 'Topic 0: 乌克兰 俄罗斯 美国 北约 普京 总统 西方 表示 国家 泽连斯基 战争 没有 可能 报道 法国 特朗普 ';
-        var keywords1 = 'Topic 1: 中国 国家 世界 俄罗斯 发展 问题 国际 德国 合作 和平 经济 全球 战争 一个 制裁 安全 欧洲 ';
-        var keywords2 = 'Topic 2: 乌克兰 俄罗斯 俄军 局势 视频 微博 军事 乌军 无人机 导弹 袭击 超话 地区 新进展 报道 关注 战争 ';
-        var keywords3 = 'Topic 3: 美国 中国 经济 以色列 黄金 伊朗 全球 市场 美元 已经 可能 日本 现在 中东 一个 没有 影响 增长 ';
+        var keywords0 = '全球经济与投资: 关键词"美国""中国""经济""全球""市场""美元"等揭示了全球经济的主要驱动力和市场状况。同时，"以色列""伊朗""中东""石油"等词则展示了地缘政治对全球经济的影响。此外，"黄金""增长""投资"等词则反映了经济活动中投资者和市场的关注点。';
+        var keywords1 = '乌克兰军事动态: 关键词"乌克兰""俄罗斯""俄军""军事""无人机""导弹"等直接关联到乌克兰的军事行动和冲突升级。同时，"局势""视频""微博""关注""打击"等词则展示了媒体和公众对这一军事动态的关注和报道。';
+        var keywords2 = '国际政治与合作: 关键词"中国""世界""俄罗斯""发展""国际"等揭示了主要国家在国际舞台上的地位和角色。同时，"和平""经济""全球""合作"等词则表达了国际间合作与共同发展的愿望。此外，"战争""制裁""安全"等词也反映了国际政治中的挑战和冲突。';
+        var keywords3 = '乌克兰冲突与国际支持: 关键词如"乌克兰""俄罗斯""美国""北约""普京"等直接关联到乌克兰与俄罗斯之间的冲突，而"总统""西方""支持""援助"等词则表明国际社会对此冲突的态度和行动。';
     }
     ;
     d3.select('.theme-river-keywords0').text(keywords0);
@@ -193,11 +193,10 @@ function themeRiver() {
         chart.renderText = function () {
             d3.select('.xAxis').append('text')
                 .attr('class', 'axisText')
-                .attr('x', chart.getBodyWidth() + 35)
+                .attr('x', chart.getBodyWidth() + 45)
                 .attr('y', 0)
                 .attr('fill', config.textColor)
                 .attr('dy', 20)
-
                 .text('日期').style('font-family', 'SimSun').style('font-size','18px');
 
             d3.select('.yAxis').append('text')
@@ -258,7 +257,61 @@ function themeRiver() {
             d3.selectAll('.area')
                 .on('mouseover', function (d) {
                     const e = d3.event;
+                    
+                    var txt;
 
+                    if(value == '俄方全面进攻'){
+                        if(d3.select(this).datum().key == 'topic0'){
+                            txt = '国际政治与地缘关系'
+                        }else if(d3.select(this).datum().key == 'topic1'){
+                            txt = '乌克兰局势与外交谈判'
+                        }else if(d3.select(this).datum().key == 'topic2'){
+                            txt = '全球经济与市场动态'
+                        }else if(d3.select(this).datum().key == 'topic3'){
+                            txt = '金融市场与投资策略'
+                        }
+                    }else if(value == '俄方乌东攻势'){
+                        if(d3.select(this).datum().key == 'topic0'){
+                            txt = '国际政治与经济'
+                        }else if(d3.select(this).datum().key == 'topic1'){
+                            txt = '乌克兰局势与军事动态'
+                        }else if(d3.select(this).datum().key == 'topic2'){
+                            txt = '国际能源与政治'
+                        }else if(d3.select(this).datum().key == 'topic3'){
+                            txt = '全球经济与市场趋势'
+                        }
+                    }else if(value == '乌方全面反攻'){
+                        if(d3.select(this).datum().key == 'topic0'){
+                            txt = '乌克兰战争与军事动态'
+                        }else if(d3.select(this).datum().key == 'topic1'){
+                            txt = '乌克兰局势与国际反应'
+                        }else if(d3.select(this).datum().key == 'topic2'){
+                            txt = '全球经济与市场趋势'
+                        }else if(d3.select(this).datum().key == 'topic3'){
+                            txt = '欧洲能源政策与地缘政治'
+                        }
+                    }else if(value == '俄乌僵持'){
+                        if(d3.select(this).datum().key == 'topic0'){
+                            txt = '国际政治与和平发展'
+                        }else if(d3.select(this).datum().key == 'topic1'){
+                            txt = '全球经济与市场趋势'
+                        }else if(d3.select(this).datum().key == 'topic2'){
+                            txt = '乌克兰局势与军事动态'
+                        }else if(d3.select(this).datum().key == 'topic3'){
+                            txt = '能源政策与地缘政治'
+                        }
+                    }else if(value == '对俄制裁'){
+                        if(d3.select(this).datum().key == 'topic0'){
+                            txt = '乌克兰冲突与国际支持'
+                        }else if(d3.select(this).datum().key == 'topic1'){
+                            txt = '国际政治与合作'
+                        }else if(d3.select(this).datum().key == 'topic2'){
+                            txt = '乌克兰军事动态'
+                        }else if(d3.select(this).datum().key == 'topic3'){
+                            txt = '全球经济与投资'
+                        }
+                    }
+                    
                     const position = d3.pointer(d);
                     d.target.style.cursor = 'hand'
 
@@ -273,7 +326,7 @@ function themeRiver() {
                         .attr('x', position[0] + 50)
                         .attr('y', position[1] - 5)
                         .attr('fill', config.textColor)
-                        .text(d3.select(this).datum().key);
+                        .text(txt);
                 })
                 .on('mouseleave', function () {
                     const e = d3.event;
